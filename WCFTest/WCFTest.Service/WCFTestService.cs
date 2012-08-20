@@ -19,7 +19,7 @@ namespace WCFTest.Service
         public string GetData2()
         {
             //WebOperationContext.Current.OutgoingResponse.ContentType = "text/xml";
-            return string.Format("You entered: {0}", "xxx");
+            return "You entered: xxx";
         }
     }
 }
