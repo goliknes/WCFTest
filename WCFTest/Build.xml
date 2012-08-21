@@ -7,20 +7,24 @@
     <OutputFolder>Output</OutputFolder>
     <CompilationDebug />
     <CustomErrorsMode />
-    <ContentEditorsEmail />
-    <AdministratorsEmail />
+    <!--<ContentEditorsEmail />-->
+    <!--<AdministratorsEmail />-->
   </PropertyGroup>
-  <PropertyGroup Condition="$(Environment) == 'Test'">
+  <PropertyGroup>
+    <DeploymentFolder>C:\Temp\buildoutput</DeploymentFolder>
+    <!--<VirtualDirectory>VigiloOptimalTest</VirtualDirectory>-->
+  </PropertyGroup>
+  <!--<PropertyGroup Condition="$(Environment) == 'Test'">
     <DeploymentFolder>C:\Temp\BuildDemoSite\Test</DeploymentFolder>
     <VirtualDirectory>VigiloOptimalTest</VirtualDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="$(Environment) == 'Live'">
     <DeploymentFolder>C:\temp\buildoutput</DeploymentFolder>
     <VirtualDirectory>BuildDemoLive</VirtualDirectory>
-  </PropertyGroup>
+  </PropertyGroup>-->
   <Target Name="Run">
     <CallTarget Targets="Compile" />
-    <!--<CallTarget Targets="Publish" />-->
+    <CallTarget Targets="Publish" />
     <!--<CallTarget Targets="MergeConfig" />-->
     <CallTarget Targets="Deploy" />
   </Target>
