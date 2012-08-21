@@ -11,7 +11,7 @@
     <!--<AdministratorsEmail />-->
   </PropertyGroup>
   <PropertyGroup>
-    <DeploymentFolder>C:\Temp\buildoutput</DeploymentFolder>
+    <DeploymentFolder>C:\inetpub\wwwroot\WCFTest</DeploymentFolder>
     <!--<VirtualDirectory>VigiloOptimalTest</VirtualDirectory>-->
   </PropertyGroup>
   <!--<PropertyGroup Condition="$(Environment) == 'Test'">
