@@ -45,7 +45,11 @@
     <MergeConfig SourceConfigFilename="$(Environment).config" TargetConfigFilename="$(OutputFolder)\Web.config" />
   </Target>-->
   <Target Name="Deploy">
-    <RemoveDir Directories="$(DeploymentFolder)" ContinueOnError="true" />
+    <!--<RemoveDir Directories="$(DeploymentFolder)" ContinueOnError="true" />-->
+    <ItemGroup>
+      <WebFiles Include="@(DeploymentFolder)\*.*" />
+    </ItemGroup>
+    <Delete Files="@(WebFiles)" />
     <ItemGroup>
       <DeploymentFiles Include="$(OutputFolder)\**\*.*" />
     </ItemGroup>
