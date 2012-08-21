@@ -20,7 +20,7 @@
   </PropertyGroup>
   <Target Name="Run">
     <CallTarget Targets="Compile" />
-    <CallTarget Targets="Publish" />
+    <!--<CallTarget Targets="Publish" />-->
     <!--<CallTarget Targets="MergeConfig" />-->
     <CallTarget Targets="Deploy" />
   </Target>
@@ -31,7 +31,7 @@
     <Delete Files="@(BinFiles)" />
   </Target>
   <Target Name="Compile" DependsOnTargets="Clean">
-    <MSBuild Projects="WCFTest.ServiceHost\WCFTest.ServiceHost.csproj" />
+    <MSBuild Projects="WCFTest.Service\WCFTest.Service.csproj" />
   </Target>
   <Target Name="Publish">
     <RemoveDir Directories="$(OutputFolder)" ContinueOnError="true" />
