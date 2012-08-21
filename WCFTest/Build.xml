@@ -20,7 +20,7 @@
   </PropertyGroup>
   <Target Name="Run">
     <CallTarget Targets="Compile" />
-    <!--<CallTarget Targets="Publish" />-->
+    <CallTarget Targets="Publish" />
     <!--<CallTarget Targets="MergeConfig" />-->
     <CallTarget Targets="Deploy" />
   </Target>
@@ -31,11 +31,11 @@
     <Delete Files="@(BinFiles)" />
   </Target>
   <Target Name="Compile" DependsOnTargets="Clean">
-    <MSBuild Projects="WCFTest.Service\WCFTest.Service.csproj" />
+    <MSBuild Projects="WCFTest.ServiceHost\WCFTest.ServiceHost.csproj" />
   </Target>
   <Target Name="Publish">
     <RemoveDir Directories="$(OutputFolder)" ContinueOnError="true" />
-    <MSBuild Projects="WCFTest.ServiceHost\WCFTest.ServiceHost.csproj" Targets="ResolveReferences;_CopyWebApplication" Properties="WebProjectOutputDir=$(OutputFolder);OutDir=$(WebProjectOutputDir)\" />
+    <MSBuild Projects="WCFTest.ServiceHost.csproj" Targets="ResolveReferences;_CopyWebApplication" Properties="WebProjectOutputDir=$(OutputFolder);OutDir=$(WebProjectOutputDir)\" />
   </Target>
   <!--<Target Name="MergeConfig">
     <MergeConfig SourceConfigFilename="$(Environment).config" TargetConfigFilename="$(OutputFolder)\Web.config" />
