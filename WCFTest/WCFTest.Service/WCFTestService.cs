@@ -13,7 +13,7 @@ namespace WCFTest.Service
     {   
         public string GetData(string value)
         {
-            return string.Format("You entered: {0}", value);
+            return string.Format("You entered following value: {0}", value);
         }
 
         public string GetData2()
